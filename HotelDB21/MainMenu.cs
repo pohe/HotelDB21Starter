@@ -17,8 +17,10 @@ namespace HotelDBConsole21
             Console.WriteLine("2) Opret nyt Hotel");
             Console.WriteLine("3) Fjern Hotel");
             Console.WriteLine("4) Søg efter hotel udfra hotelnr");
-            Console.WriteLine("5) List alle værelser");
-            Console.WriteLine("6) List alle til et bestemt hotel");
+            Console.WriteLine("5) Opdater et hotel");
+            Console.WriteLine("6) List alle værelser");
+            Console.WriteLine("7) List alle værelser til et bestemt hotel");
+            Console.WriteLine("8) Flere menupunkter kommer snart :) ");
             Console.WriteLine("Q) Afslut");
         }
 
