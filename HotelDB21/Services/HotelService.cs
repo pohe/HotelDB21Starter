@@ -10,8 +10,7 @@ namespace HotelDBConsole21.Services
     public class HotelService : Connection, IHotelService
     {
         private string queryString = "select * from Hotel";
-        private string queryNameString = "select * from Hotel where  Hotel_No like @Navn";
-        private string queryStringFromID;
+        private String queryStringFromID = "select * from Hotel where Hotel_No = @ID";
         private string insertSql;
         private string deleteSql;
         private string updateSql;
