@@ -12,12 +12,12 @@ namespace RazorPageHotelApp.Services
     public class HotelService: Connection, IHotelService
     {
 
-        private String queryString = "select * from Hotel";
-        private String queryNameString = "select * from Hotel where  Name like @Navn";
-        private String queryStringFromID = "select * from Hotel where Hotel_No = @ID";
-        private String insertSql = "insert into Hotel Values (@ID, @Navn, @Adresse)";
-        private String deleteSql = "delete from Hotel where Hotel_No = @ID";
-        private String updateSql = "update Hotel " +
+        private String queryString = "select * from po22_Hotel";
+        private String queryNameString = "select * from po22_Hotel where  Name like @Navn";
+        private String queryStringFromID = "select * from po22_Hotel where Hotel_No = @ID";
+        private String insertSql = "insert into po22_Hotel Values (@ID, @Navn, @Adresse)";
+        private String deleteSql = "delete from po22_Hotel where Hotel_No = @ID";
+        private String updateSql = "update po22_Hotel " +
                                    "set Hotel_No= @HotelID, Name=@Navn, Address=@Adresse " +
                                    "where Hotel_No = @ID";
 

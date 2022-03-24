@@ -20,41 +20,7 @@ namespace HotelDBConsole21.Services
 
         public List<Hotel> GetAllHotel()
         {
-            List<Hotel> hoteller = new List<Hotel>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(queryString, connection))
-                {
-                    try
-                    {
-                        command.Connection.Open();//Synkront
-                        SqlDataReader reader = command.ExecuteReader();//Synkront
-                        while (reader.Read())
-                        {
-                            int hotelNr = reader.GetInt32(0);
-                            String hotelNavn = reader.GetString(1);
-                            String hotelAdr = reader.GetString(2);
-                            Hotel hotel = new Hotel(hotelNr, hotelNavn, hotelAdr);
-                            hoteller.Add(hotel);
-                        }
-                    }
-                    catch (SqlException sqlEx)
-                    {
-                        Console.WriteLine("Database error " + sqlEx.Message);
-                        return null;
-                    }
-                    catch (Exception exp)
-                    {
-                        Console.WriteLine("Generel fejl" + exp.Message);
-                        return null;
-                    }
-                    finally{
-                        // Her kommer man lige meget hvad.
-                    }
-
-                }
-            }
-            return hoteller;
+            throw new NotImplementedException();
         }
 
         public Hotel GetHotelFromId(int hotelNr)
@@ -64,21 +30,7 @@ namespace HotelDBConsole21.Services
 
         public bool CreateHotel(Hotel hotel)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(insertSql, connection);
-                command.Parameters.AddWithValue("@ID", hotel.HotelNr);
-                command.Parameters.AddWithValue("@Navn", hotel.Navn);
-                command.Parameters.AddWithValue("@Adresse", hotel.Adresse);
-                command.Connection.Open();
-
-                int noOfRows = command.ExecuteNonQuery();//bruges ved update, delete, insert
-                if (noOfRows == 1)
-                {
-                    return true; 
-                }
-                return false;
-            }
+            throw new NotImplementedException();
         }
 
         public bool UpdateHotel(Hotel hotel, int hotelNr)
