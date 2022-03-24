@@ -33,14 +33,14 @@ namespace HotelDBConsole21
             switch (Console.ReadLine())
             {
                 case "1":
-                    ShowHotels();
+                    //ShowHotels();
                     return true;
                 case "1a":
-                    ShowHotelsAsync();
-                    DoSomething();
+                    //ShowHotelsAsync();
+                    //DoSomething();
                     return true;
                 case "2":
-                    CreateHotel();
+                    //CreateHotel();
                     return true;
                 case "Q": 
                 case "q": return false;
@@ -49,60 +49,6 @@ namespace HotelDBConsole21
 
         }
 
-        private static void DoSomething()
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                Thread.Sleep(100);
-                Console.WriteLine(i + " i GUI");
-            }
-        }
-
-        private async static Task ShowHotelsAsync()
-        {
-            Console.Clear();
-            HotelServiceAsync hs = new HotelServiceAsync();
-            List<Hotel> hotels = await hs.GetAllHotelAsync();
-            foreach (Hotel hotel in hotels)
-            {
-                Console.WriteLine($"HotelNr {hotel.HotelNr} Name {hotel.HotelNr} Address {hotel.Adresse}");
-            }
-        }
-
-        private static void CreateHotel()
-        {
-            //Indlæs data
-            Console.Clear();
-            Console.WriteLine("Indlæs hotelnr");
-            int hotelnr = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Indlæs hotelnavn");
-            string navn = Console.ReadLine();
-            Console.WriteLine("Indlæs hotel adresse");
-            string adresse = Console.ReadLine();
-
-            //Kalde hotelservice vise resultatet
-            HotelService hs = new HotelService();
-            bool ok = hs.CreateHotel(new Hotel(hotelnr, navn, adresse));
-            if (ok)
-            {
-                Console.WriteLine("Hotellet blev oprettet!");
-            }
-            else
-            {
-                Console.WriteLine("Fejl. Hotellet blev ikke oprettet!");
-            }
-
-        }
-
-        private static void ShowHotels()
-        {
-            Console.Clear();
-            HotelService hs = new HotelService();
-            List<Hotel> hotels = hs.GetAllHotel();
-            foreach (Hotel hotel in hotels)
-            {
-                Console.WriteLine($"HotelNr {hotel.HotelNr} Name {hotel.Navn} Address {hotel.Adresse}");
-            }
-        }
+        
     }
 }
